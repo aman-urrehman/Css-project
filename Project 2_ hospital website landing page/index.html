@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+            top: -30px;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .container {
+            background-image: url('./background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .navbaar {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbaar span {
+            font-size: larger;
+            font-weight: bolder;
+            margin-top: 10px;
+            color: white;
+        }
+
+        .navbaar button {
+            background-color: rgb(63, 127, 238);
+            border: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-right: 15px;
+            padding-left: 15px;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            display: flex;
+            margin-top: 7px;
+            align-items: center;
+        }
+
+        .navbaar button:hover {
+            background-color: rgb(43, 113, 235);
+            transition: ease-in-out 0.3s;
+
+        }
+
+        .arrow-button {
+            margin-left: 15px;
+            position: relative;
+            top: -6px;
+        }
+
+        .form-container {
+            max-width: 300px;
+            min-height: 400px;
+            width: 100%;
+            padding: 25px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .heading {
+            font-size: 50px;
+            line-height: 70px;
+            color: white;
+        }
+
+        .sec-1-buttons {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 17px;
+            border: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .buttons {
+            position: relative;
+            right: 17px;
+            top: 7px;
+        }
+
+        .sec-1 {
+            margin-top: 50px;
+        }
+
+        .sec-1 p {
+            color: white;
+        }
+
+        .section-2 p {
+            text-align: center;
+            bottom: 20px;
+            position: relative;
+            font-size: 14px;
+            color: rgb(32, 32, 32);
+        }
+
+        .section-2 h2 {
+            text-align: center;
+            margin-top: 100px;
+            font-weight: bolder;
+            font-size: 30px;
+        }
+
+        .card {
+            background-color: #f9fbfd;
+            /* Light blue background for the card */
+            padding: 10px;
+            border-radius: 8px;
+            width: 280px;
+            /* Reduced width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            height: 370px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #007bff;
+            padding: 30px;
+            position: relative;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .circle {
+            background-color: #fff;
+            padding: 12px 20px;
+            border-radius: 60%;
+        }
+
+        .header span {
+            margin-top: 12px;
+            color: #fff;
+        }
+
+        .header>.circle {
+            color: #007bff;
+        }
+
+        .cards li {
+            list-style: none;
+            color: #383737;
+            padding: 8px;
+            font-weight: 600;
+        }
+
+        .cards button {
+            background-color: rgba(0, 0, 0, 0);
+            margin-left: 35px;
+            border: none;
+            position: relative;
+            bottom: 10px;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .card-1 {
+            margin-left: 50px;
+            font-size: 13px;
+            width: 200px;
+            background-color: #f9fbfd;
+            border: 2px solid #e2e1e1;
+            padding: 15px;
+            height: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .three-cards {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            background-color: #faf6f6;
+            height: 400px;
+            align-items: center;
+        }
+
+        .section-3>.para-3 {
+            text-align: center;
+            bottom: 20px;
+            position: relative;
+            font-size: 14px;
+            color: rgb(32, 32, 32);
+        }
+
+        .section-3 h2 {
+            text-align: center;
+            margin-top: 100px;
+            font-weight: bolder;
+            font-size: 30px;
+        }
+
+        .section-4>.para-3 {
+            text-align: center;
+            bottom: 20px;
+            position: relative;
+            font-size: 14px;
+            color: rgb(32, 32, 32);
+        }
+
+        .section-4 h2 {
+            text-align: center;
+            margin-top: 100px;
+            font-weight: bolder;
+            font-size: 30px;
+        }
+
+        .first {
+            display: flex;
+            gap: 10px;
+        }
+
+        .col-1 {
+            width: 200px;
+            margin-left: 100px;
+        }
+
+        .upper {
+            margin-top: 10px;
+            color: rgb(19, 201, 19);
+            font-weight: bold;
+        }
+
+        .first p {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .light-para {
+            margin-left: 20px;
+            position: relative;
+            bottom: 22px;
+            font-size: 12px;
+            color: #646363;
+            font-weight: bold;
+        }
+
+        .col-2,
+        .col-3 {
+            width: 200px;
+            margin-left: 100px;
+        }
+
+        .sub-section-2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 40px;
+        }
+
+        .section-5>.para-3 {
+            text-align: center;
+            bottom: 20px;
+            position: relative;
+            font-size: 14px;
+            color: rgb(32, 32, 32);
+        }
+
+        .section-5 h2 {
+            text-align: center;
+            margin-top: 100px;
+            font-weight: bolder;
+            font-size: 30px;
+            padding: 20px;
+        }
+
+        /* card css */
+
+
+
+
+        .crd-1 {
+            width: 220px;
+            height: 500px;
+            border: 1px solid #007bff;
+            box-shadow: 0 4px 8px #007bff;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .section-5 h3 {
+            text-align: center;
+            position: relative;
+            top: 20px;
+        }
+      
+        .crd-1 p {
+            font-size: 12px;
+            padding: 30px;
+            text-align: center;
+            font-weight: bold;
+            color: #646363;
+        }
+
+        .price {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            color: #007bff;
+            /* font-weight: bold; */
+            position: relative;
+            bottom: 10px;
+            padding: 10px;
+        }
+
+        .amount {
+            display: flex;
+            flex-direction: column;
+            color: #007bff;
+            margin-top: 10px;
+
+        }
+
+        .zero {
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        .per {
+            font-weight: bold;
+        }
+
+        .per~span {
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .list-items ul {
+            list-style-type: none;
+            position: relative;
+            right: 25px;
+            bottom: 20px;
+
+        }
+
+        .list-items li {
+            position: relative;
+            font-size: 12px;
+            padding-left: 40px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .list-items li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 41%;
+            transform: translateY(-50%);
+            background-color: green;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .crd-1 button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 50px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        .card-btn{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .cards-holder{
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            padding: 50px;
+        }
+        .crd-1:hover{
+            background-color: #c3c5c7;
+            transition: ease-in-out 0.5s;
+        }
+        .section-5{
+            background-color: #faf6f6;
+        }
+        .second-half{
+            width: 350px;
+        }
+        .second-half input {
+            width: 220px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            padding: 10px;
+            margin-left: 5px;
+        }
+        .first-half p {
+            font-size: 14px;
+        }
+        .first-half{
+            width: 410px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .first-half h2 {
+            font-size: 35px;
+        }
+        .section-6{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #05011f;
+            padding: 10px;
+        }
+        .second-half button {
+            border: none;
+            background-color: #007bff;
+            padding: 11px 20px;
+           position: relative;
+           color: #fff;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            right: 5px;
+        }
+        .section-7{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 60px;
+        }
+        .last{
+            width: 250px;
+        }
+        .last ul {
+            list-style: none;
+            position: relative;
+            right: 40px;
+            color:#6b6c6d ;
+            font-size: 14px;
+            font-weight: bold;
+            bottom: 10px;
+        }
+        .last h4 {
+            font-size: 20px;
+        }
+        .last li {
+            padding: 3px;
+        }
+        .img-section{
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbaar -->
+        <div class="navbaar">
+            <span>Brandname</span>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">Product</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+            </div>
+            <button>Get Quate Now <span class="arrow-button">&rarr;</span> </button>
+        </div>
+        <div class="main">
+            <div class="sec-1">
+                <h1 class="heading">Meet The Best <br> Hospital</h1>
+                <p>we know how large object will act, <br>But things on a small scale</p>
+                <div class="buttons">
+                    <button class="sec-1-buttons">Get Quate Now</button>
+                    <button class="sec-1-buttons">Learn More</button>
+                </div>
+            </div>
+            <div class="form-container">
+                <h3>Book Appointment</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" placeholder="Full name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" placeholder="example@.com" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department:</label>
+                        <select id="department" name="department" required>
+                            <option value="">Select a department</option>
+                            <option value="hr">HR</option>
+                            <option value="it">IT</option>
+                            <option value="finance">Finance</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time:</label>
+                        <select id="time" name="time" required>
+                            <option value="">Select a time</option>
+                            <option value="morning">Morning</option>
+                            <option value="afternoon">Afternoon</option>
+                            <option value="evening">Evening</option>
+                        </select>
+                    </div>
+                    <button class="form-button">Book Appointment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="section-2">
+        <h2>Leading Machine</h2>
+        <p>
+            problems trying to resolve the conflict between <br>
+            the two major realms of classical physics:newtonian mechanics <br>
+        </p>
+    </div>
+    <!-- cards -->
+    <div class="cards">
+        <div class="card">
+            <div class="header">
+                <div class="circle">E</div>
+                <span>Emergency Case</span>
+            </div>
+
+            <ul>
+                <li>-the best products start with figma</li>
+                <li>-design with real data</li>
+                <li>-lightning fast prototyping</li>
+                <li>-fastest way to oraganize</li>
+                <li>-work at the speed of thought</li>
+            </ul>
+            <button>Learn more</button>
+        </div>
+        <div class="card">
+            <div class="header">
+                <div class="circle">C</div>
+                <span>Cancer Care</span>
+            </div>
+
+            <ul>
+                <li>-the best products start with figma</li>
+                <li>-design with real data</li>
+                <li>-lightning fast prototyping</li>
+                <li>-fastest way to oraganize</li>
+                <li>-work at the speed of thought</li>
+            </ul>
+            <button>Learn more</button>
+        </div>
+        <div class="card">
+            <div class="header">
+                <div class="circle">H</div>
+                <span>Health quaries</span>
+            </div>
+
+            <ul>
+                <li>-the best products start with figma</li>
+                <li>-design with real data</li>
+                <li>-lightning fast prototyping</li>
+                <li>-fastest way to oraganize</li>
+                <li>work at the speed of thought</li>
+            </ul>
+            <button>Learn more</button>
+        </div>
+
+    </div>
+    <div class="section-3">
+        <h2>Leading Machine</h2>
+        <p class="para-3">
+            problems trying to resolve the conflict between <br>
+            the two major realms of classical physics:newtonian mechanics <br>
+        </p>
+        <div class="three-cards">
+            <div class="card-1">
+                <img width="60px"
+                    src="./hospital website landing page/assets/pngtree-five-star-rating-icon-4-mark-vote-rating-vector-png-image_32571646.png"
+                    alt="">
+                <p class="para-2">slate helps you see how many more days you need to work to reach your financial goal.
+                </p>
+                <img src="./name.png" alt="doc">
+            </div>
+            <div class="card-1">
+                <img width="60px"
+                    src="./hospital website landing page/assets/pngtree-five-star-rating-icon-4-mark-vote-rating-vector-png-image_32571646.png"
+                    alt="">
+                <p class="para-2">slate helps you see how many more days you need to work to reach your financial goal.
+                </p>
+                <img src="./hospital website landing page/assets/user2.png" alt="doc">
+            </div>
+            <div class="card-1">
+                <img width="60px"
+                    src="./hospital website landing page/assets/pngtree-five-star-rating-icon-4-mark-vote-rating-vector-png-image_32571646.png"
+                    alt="">
+                <p class="para-2">slate helps you see how many more days you need to work to reach your financial goal.
+                </p>
+                <img src="./hospital website landing page/assets/user1.png" alt="doc">
+            </div>
+        </div>
+    </div>
+    <div class="section-4">
+        <h2>FAQ</h2>
+        <p class="para-3">
+            problems trying to resolve the conflict between <br>
+            the two major realms of classical physics:newtonian mechanics <br>
+        </p>
+        <div class="sub-section-2">
+            <div class="col-1">
+                <div class="content">
+                    <div class="first"><span class="upper">></span>
+                        <p> The quick fox jumps over the lazy dog.</p>
+                    </div>
+                    <p class="light-para">things on a very small scale behave like nothing</p>
+                </div>
+                <div class="content">
+                    <div class="first"><span class="upper">></span>
+                        <p> The quick fox jumps over the lazy dog.</p>
+                    </div>
+                    <p class="light-para">things on a very small scale behave like nothing</p>
+                </div>
+                <div class="content">
+                    <div class="first"><span class="upper">></span>
+                        <p> The quick fox jumps over the lazy dog.</p>
+                    </div>
+                    <p class="light-para">things on a very small scale behave like nothing</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="content">
+                    <div class="first"><span class="upper">></span>
+                        <p> The quick fox jumps over the lazy dog.</p>
+                    </div>
+                    <p class="light-para">things on a very small scale behave like nothing</p>
+                </div>
+                <div class="content">
+                    <div class="first"><span class="upper">></span>
+                        <p> The quick fox jumps over the lazy dog.</p>
+                    </div>
+                    <p class="light-para">things on a very small scale behave like nothing</p>
+                </div>
+                <div class="content">
+                    <div class="first"><span class="upper">></span>
+                        <p> The quick fox jumps over the lazy dog.</p>
+                    </div>
+                    <p class="light-para">things on a very small scale behave like nothing</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="content">
+                    <div class="first"><span class="upper">></span>
+                        <p> The quick fox jumps over the lazy dog.</p>
+                    </div>
+                    <p class="light-para">things on a very small scale behave like nothing</p>
+                </div>
+                <div class="content">
+                    <div class="first"><span class="upper">></span>
+                        <p> The quick fox jumps over the lazy dog.</p>
+                    </div>
+                    <p class="light-para">things on a very small scale behave like nothing</p>
+                </div>
+                <div class="content">
+                    <div class="first"><span class="upper">></span>
+                        <p> The quick fox jumps over the lazy dog.</p>
+                    </div>
+                    <p class="light-para">things on a very small scale behave like nothing</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-5">
+        <h2>Pricing</h2>
+        <p class="para-3">
+            problems trying to resolve the conflict between <br>
+            the two major realms of classical physics:newtonian mechanics <br>
+        </p>
+        <div class="cards-holder">
+            <div class="crd-1">
+                <h3 class="box-heading">FREE</h3>
+                <p>oraganize across all apps by hand</p>
+                <div class="price">
+                    <span class="zero">0</span>
+                    <div class="amount">
+                        <span class="per">$</span>
+                        <span>Per Month</span>
+                    </div>
+                </div>
+                <div class="list-items">
+                    <ul>
+                        <li>Unlimited products update</li>
+                        <li>Unlimited products update</li>
+                        <li>Unlimited products update</li>
+                        <li>1GB Cloud Storage</li>
+                        <li>Email and Community Support</li>
+                    </ul>
+                </div>
+                <div class="card-btn">
+                    <button>Try for free</button>
+                </div>
+            </div>
+
+            <div class="crd-1">
+                <h3 class="box-heading">STANDARD</h3>
+                <p>oraganize across all apps by hand</p>
+                <div class="price">
+                    <span class="zero">9.99</span>
+                    <div class="amount">
+                        <span class="per">$</span>
+                        <span>Per Month</span>
+                    </div>
+                </div>
+                <div class="list-items">
+                    <ul>
+                        <li>Unlimited products update</li>
+                        <li>Unlimited products update</li>
+                        <li>Unlimited products update</li>
+                        <li>1GB Cloud Storage</li>
+                        <li>Email and Community Support</li>
+                    </ul>
+                </div>
+                <div class="card-btn">
+                    <button>Try for free</button>
+                </div>
+            </div>
+            <div class="crd-1">
+                <h3 class="box-heading">PREMIUM</h3>
+                <p>oraganize across all apps by hand</p>
+                <div class="price">
+                    <span class="zero">19.9</span>
+                    <div class="amount">
+                        <span class="per">$</span>
+                        <span>Per Month</span>
+                    </div>
+                </div>
+                <div class="list-items">
+                    <ul>
+                        <li>Unlimited products update</li>
+                        <li>Unlimited products update</li>
+                        <li>Unlimited products update</li>
+                        <li>1GB Cloud Storage</li>
+                        <li>Email and Community Support</li>
+                    </ul>
+                </div>
+                <div class="card-btn">
+                    <button>Try for free</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="section-6">
+            <div class="first-half">
+                <h2>Get In Touch</h2>
+                <p>The gradual accumulation of information about atomic and small-scale behaviour during the first quarter of 20th</p>
+            </div>
+            <div class="second-half">
+                <input type="Email" placeholder="Your Email">
+                <span><button>Subscribe</button></span>
+            </div>
+        </div>
+        <div class="section-7">
+            <div class="last">
+                <h4>Get in Touch</h4>
+                <ul>
+                    <li>the quick fox jumps over the lazy dog</li>
+                </ul>
+                <div class="img-section">
+                    <img width="20px" src="https://cdn.usbrandcolors.com/images/logos/facebook-logo.svg" alt="facebook">
+                    <img width="20px" src="https://cdn.usbrandcolors.com/images/logos/instagram-logo.png" alt="insta">
+                    <img width="20px" src="https://cdn.usbrandcolors.com/images/logos/twitter-logo.svg" alt="twitter">
+                </div>
+            </div>
+            <div class="last">
+                <h4>company info</h4>
+                <ul>
+                    <li>About us</li>
+                    <li>Career</li>
+                    <li>We are hiring</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div class="last">
+                <h4>Features</h4>
+                <ul>
+                    <li>Bussiness marketing</li>
+                    <li>User analytic</li>
+                    <li>Live Chat</li>
+                    <li>Unlimited Support</li>
+                </ul>
+            </div>
+            <div class="last">
+                <h4>Resources</h4>
+                <ul>
+                    <li>IOS & Android</li>
+                    <li>Watch a Demo</li>
+                    <li>Customers</li>
+                    <li>API</li>
+                </ul>
+            </div>
+        </div>
+        
+        
+       
+       
+
+    
+    
+    
+</body>
+
+</html>
